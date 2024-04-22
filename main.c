@@ -31,17 +31,24 @@ void playRound(int *balance) {
     printf(
         "\n------------------------------------------\n"
         "Enter your bet for the Round:\n"
-           "(a) Even\n"
-           "(b) Odd\n"
-           "(c) Red\n"
-           "(d) Black\n"
-           "(e) 1-18\n"
-           "(f) 19-36\n"
-           "(g) 1-12\n"
-           "(h) 13-24\n"
-           "(i) 25-36\n"
-           "(j) to place bet on specific number: \n"
-           "Input: ");
+            "------------------------\n"
+            "Winning payout 1:1\n"
+            "(a) Even\n"
+            "(b) Odd\n"
+            "(c) Red\n"
+            "(d) Black\n"
+            "(e) 1-18\n"
+            "(f) 19-36\n"
+            "------------------------\n"
+            "Winning payout 2:1\n"
+            "(g) 1-12\n"
+            "(h) 13-24\n"
+            "(i) 25-36\n"
+            "------------------------\n"
+            "Wining payout 35:1\n"
+            "(j) Place bet on specific number: \n"
+            "------------------------\n"
+            "Input: ");
 
     scanf(" %c", &input);
 
@@ -115,7 +122,7 @@ void playRound(int *balance) {
             printf("Enter Specific Number: \n");
             scanf(" %d", &guessedNumber);
             if (guessedNumber == winningNumber) {
-                bet = gamble * 35;
+                bet = gamble * 35 + gamble;
             } else {
                 bet = -gamble;
             }
